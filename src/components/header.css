@@ -1,0 +1,17 @@
+.VRHeaderBox {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.hamburger_nav {
+    height: 2vh;
+    padding-left: 30px;
+}
+
+.VRLogo {
+    height: 5vh;
+    padding-left: 20px;
+}
+

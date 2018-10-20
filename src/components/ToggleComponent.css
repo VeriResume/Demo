@@ -1,0 +1,14 @@
+.switch {
+    height: 1.5vh;
+    width: 3vh;
+    vertical-align: middle;
+}
+
+.switch-toggle {
+    height: 1.4vh;
+    width: 1.4vh;
+}
+
+.switch.on .switch-toggle {
+    left: 1.5vh;
+}
