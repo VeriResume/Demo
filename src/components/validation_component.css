@@ -1,5 +1,5 @@
 .placeCard {
-    height: 30px;
+    height: 35px;
     width: 75%;
     background-color: #ffffff;
     border-radius: 2px;
@@ -12,12 +12,12 @@
 
 
 .placeCard h1{
-    font-size: 15px;
+    font-size: 20px;
     vertical-align: middle;
     font-family: 'Lato', sans-serif;
-    /* 'Exo' sans-serif, Verdana, Arial, monospace; */
     float: left;
-    margin-top: 8px;
+    margin-top: 5px;
+    margin-bottom: 0vw;
     margin-left: 3%;
 }
 
@@ -31,7 +31,7 @@
 .evidence_drawer {
     border-radius: 10px;
     width: 75%;
-    margin: 0 auto;
-    margin-top: .75vw;
+    margin: 0px auto;
+    /* margin-top: .75vw; */
 
 }
