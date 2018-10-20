@@ -1,13 +1,12 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import { User } from './user';
-import { combineReducers } from 'redux-immutable';
-import { List, Map } from 'immutable';
+import thunk from 'redux-thunk';
 
-export const ConfigureStore = () => {
+export const ConfigureStore = (data) => {
+
+
     const store = createStore(
-        combineReducers({
-            user: User
-        })
+        User, data, applyMiddleware(thunk)
     );
 
     return store;

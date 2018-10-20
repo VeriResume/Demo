@@ -20,7 +20,7 @@ class ValidationComponent extends Component {
     render() {
         const evidence_display = this.props.verifiable_elements.map((evidence) => {
             return (
-                <EvidenceComponent key={evidence.get('elemID')} tag ={evidence.get('tag')} public = {evidence.get('public')} verified = {evidence.get('verified')}>
+                <EvidenceComponent key={evidence.elemID} tag ={evidence.tag} public = {evidence.public} verified = {evidence.verified}>
                 </EvidenceComponent>
             );
         });
