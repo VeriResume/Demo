@@ -11,7 +11,7 @@ import { dispatch } from 'rxjs/internal/observable/range';
 
 const mapStateToProps = state => {
     return {
-        user: state.get('user')
+        user: state
     }
 }
 
@@ -34,7 +34,7 @@ class Validation extends Component {
     }
 
     onNextSelect() {
-        var next = (this.state.selectedSection + 1) % this.props.user.size;
+        var next = (this.state.selectedSection + 1) % this.props.user.length;
         this.setState({selectedSection : next});
     }
 
@@ -42,20 +42,22 @@ class Validation extends Component {
         var next = this.state.selectedSection - 1;
 
         if (next == -1) {
-            next = this.props.user.size - 1;
+            next = this.props.user.length - 1;
         }
         this.setState({selectedSection : next});
     }
 
     render() {
         console.log(this.props.user)
-        var relevant_section = this.props.user.get(this.state.selectedSection);
+        console.log(this.state.selectedSection)
+
+        var relevant_section = this.props.user[this.state.selectedSection];
         console.log(relevant_section)
 
-        const section_display = relevant_section.get('experiences').map((experience) => {
+        const section_display = relevant_section.experiences.map((experience) => {
             console.log(experience)
             return (
-                <ValidationComponent key={experience.get('eid')} place={experience.get('place')} verifiable_elements={experience.get('verifiable_elements')} >
+                <ValidationComponent key={experience.eid} place={experience.place} verifiable_elements={experience.verifiable_elements} >
                 </ValidationComponent>
             );
         });
@@ -65,7 +67,7 @@ class Validation extends Component {
                     <div className="inner_navigation_holder">
                         <img className="section_arrow_left" onClick={this.onPrevSelect} src={"./images/left.svg"}></img>
                         <img className="section_arrow_right" onClick={this.onNextSelect} src={"./images/right.svg"}></img>
-                        <h1>{relevant_section.get('name')}</h1>
+                        <h1>{relevant_section.name}</h1>
 
                     </div>
                     <div className="plus_sign_section">
