@@ -26,13 +26,13 @@ handleInputChange(event) {
     });
 }
 
-handleSubmit(values, selected) {
+handleSubmit(values, selectedID) {
     if (this.props.key_func === 'section') {
       this.props.addFunction(values.text);
     }
     else {
-
-      this.props.addFunction(values.text, selected);
+      console.log(selectedID)
+      this.props.addFunction(values.text, selectedID);
     }
     this.toggle();
 }
@@ -44,12 +44,11 @@ toggle() {
 }
 
   render() {
-    console.log(this.props.selectedSection)
     return (
       <div>
         <img className="plus_sign_text" onClick={this.toggle} src={"./images/plus-button.svg"}></img>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className="modal_dialog_text modal-transparent">
-            <LocalForm onSubmit={(values) => this.handleSubmit(values, this.props.selectedSection)}>
+            <LocalForm onSubmit={(values) => this.handleSubmit(values, this.props.selectedID)}>
                 <Control.text type="text" className="modal_text_input form-control" model=".text" id="Text" placeholder="Type Ahead" onChange={this.handleInputChange}/>
                 <Button type="submit" className="submit_button">Submit</Button>
 
