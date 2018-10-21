@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Modal } from 'reactstrap';
 import "./PlusModalText.css" 
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { dispatch } from 'rxjs/internal/observable/range';
+
 
 class PlusModalText extends React.Component {
   constructor(props) {

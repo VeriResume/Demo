@@ -61,7 +61,7 @@ class Validation extends Component {
 
             section_display = relevant_section.experiences.map((experience) => {
                 return (
-                    <ValidationComponent key={experience._id} place={experience.place} verifiable_elements={experience.verifiable_elements} >
+                    <ValidationComponent key={experience._id} place={experience.place} experienceID={experience._id} selectedID={selectedID} verifiable_elements={experience.verifiable_elements} >
                     </ValidationComponent>
                 );
             });

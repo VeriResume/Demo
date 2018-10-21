@@ -3,12 +3,7 @@
     max-height: 100%;
 }
 
-.modal_dialog_text{
-    position: absolute;
-    top: 32%;
-    left: 50%;
-    transform: translate(-50%, -50%) !important;
-}
+
 
 .modal_text_input {
     height: 70px;
@@ -43,5 +38,11 @@
     outline-width: 0;
 }
 
+.modal_dialog_text{
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+}
 
 

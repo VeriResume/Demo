@@ -26,10 +26,11 @@ class ValidationComponent extends Component {
         });
 
         return (
+
             <div>
                 <div className="placeCard">
                     <h1>{this.props.place}</h1>
-                    <PlusModalEvidence collapse={this.state.collapse}/>
+                    <PlusModalEvidence collapse={this.state.collapse} experienceID={this.props.experienceID} selectedID={this.props.selectedID}/>
                     <img className="dropdown" onClick={this.toggle}  src={"./images/dropdown.svg"}></img> 
                 </div>
                 <Collapse className="constant_width" isOpen={this.state.collapse}>

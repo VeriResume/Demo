@@ -11,6 +11,8 @@ export const User = (state = {}, action) => {
             return action.items;
         case ActionTypes.ADD_SECTION:
             return action.items;
+        case ActionTypes.ADD_VERIFIABLE_ITEM:
+            return action.items;
         default:
           return state;
       }
