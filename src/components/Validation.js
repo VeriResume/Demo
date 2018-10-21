@@ -49,18 +49,23 @@ class Validation extends Component {
 
     render() {
         console.log(this.props.user)
-        console.log(this.state.selectedSection)
-
         var relevant_section = this.props.user[this.state.selectedSection];
-        console.log(relevant_section)
+        var section_display = <div></div>
+        var selectedID = undefined;
+        if (typeof relevant_section === 'undefined') {
+            relevant_section = {}
+            relevant_section.name = ""
+        }
+        else {
+            selectedID = relevant_section._id;
 
-        const section_display = relevant_section.experiences.map((experience) => {
-            console.log(experience)
-            return (
-                <ValidationComponent key={experience.eid} place={experience.place} verifiable_elements={experience.verifiable_elements} >
-                </ValidationComponent>
-            );
-        });
+            section_display = relevant_section.experiences.map((experience) => {
+                return (
+                    <ValidationComponent key={experience._id} place={experience.place} verifiable_elements={experience.verifiable_elements} >
+                    </ValidationComponent>
+                );
+            });
+        }
         return (
             <div className="container">
                 <div className="section_navigation">
@@ -77,7 +82,7 @@ class Validation extends Component {
                 {section_display}
                 <br></br>
                 <div className="plus_sign_experience">
-                    <PlusModalText addFunction={this.props.addExperience} key_func='experience' selectedSection={this.state.selectedSection}/>
+                    <PlusModalText addFunction={this.props.addExperience} key_func='experience' selectedID={selectedID}/>
                 </div>
 
             </div>

@@ -6,12 +6,11 @@ import * as ActionTypes from './ActionTypes';
 export const User = (state = {}, action) => {
     switch (action.type) {
         case ActionTypes.ADD_EXPERIENCE:
-
-
-            return state;
+            console.log('here')
+            console.log(action.items)
+            return action.items;
         case ActionTypes.ADD_SECTION:
-
-            return state;
+            return action.items;
         default:
           return state;
       }
